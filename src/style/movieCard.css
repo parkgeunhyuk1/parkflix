@@ -1,0 +1,23 @@
+.card{
+    width: 300px;
+    background-position: center center;
+    background-size: cover;
+}
+.overlay{
+    opacity: 0;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(126, 123, 123, 0.3);
+    
+}
+#card1{
+    height: 200px;
+}
+#card1:hover{
+    width: 360px;
+    height: 240px;
+}

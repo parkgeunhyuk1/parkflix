@@ -14,18 +14,22 @@ const getMovies = () => {
           const upComingApi = api.get(
             `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
           );
+          const genreApi= api.get(`/genre/movie/list?api_key=${API_KEY}&language=en-US`)
       
-          let [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all([
+          let [popularMovies, topRatedMovies, upcomingMovies,genreList] = await Promise.all([
             popularMovieApi,
             topRatedApi,
             upComingApi,
+            genreApi,
           ]);
+          
           dispatch({
             type: "GET_MOVIES_SUCCESS",
             payload: {
               popularMovies: popularMovies.data,
               topRatedMovies: topRatedMovies.data,
               upcomingMovies: upcomingMovies.data,
+              genreList: genreList.data.genres
             },
           });
     }catch(error){

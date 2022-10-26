@@ -1,5 +1,6 @@
 .homePage{
     width: 100%;
-    height: 100vh;
     background-color: black;
+    color: azure;
+    height: 150vh;
 }
