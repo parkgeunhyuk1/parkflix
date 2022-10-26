@@ -3,17 +3,32 @@ import { movieAction } from '../redux/actions/MovieAction'
 import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components/Banner'
 import '../style/homepage.css'
+import MovieSlide from '../components/MovieSlide'
+import ClipLoader from "react-spinners/ClipLoader";
 const HomePage = () => {
   const dispatch=useDispatch()
-  const {popularMovies,topRatedMovies,upcomingMovies}=useSelector(state=>state.movie)
+  const {popularMovies,topRatedMovies,upcomingMovies, loading}=useSelector(state=>state.movie)
   console.log('home',popularMovies)
 
   useEffect(()=>{
     dispatch(movieAction.getMovies())
   },[])
+  if(loading){
+    return <ClipLoader
+    color='red'
+    loading={loading}
+    size={150}
+  />
+  }
   return (
     <div className='homePage'>
-     {popularMovies.results &&<Banner movie={popularMovies.results[0]}/> } 
+     <Banner movie={popularMovies.results[0]}/> 
+     <h1>Popular Movies</h1> 
+     <MovieSlide movies={popularMovies}/>
+     <h1>Top Rated Movies</h1>
+     <MovieSlide movies={topRatedMovies}/>
+     <h1>Upcoming Movies</h1>
+     <MovieSlide movies={upcomingMovies}/>
     </div>
   )
 }
