@@ -68,10 +68,11 @@
 }
 .review{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     flex-direction: column;
     background-color: black;
+    padding-bottom: 20%;
 }
 .buttonContainer{
     margin-left: 5%;
@@ -86,4 +87,19 @@
     border: none;
     background-color: rgb(126, 124, 124,0.7);
     margin-left: 2%;
+}
+.reviewPage{
+    width: 90%;
+    color: white;
+    margin-left: 5%;
+    margin-top: 5%;
+    border: 4px solid white;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    white-space: pre-line;
+}
+.textspan{
+    border-bottom: 1px solid grey;
+    padding: 20px;
 }

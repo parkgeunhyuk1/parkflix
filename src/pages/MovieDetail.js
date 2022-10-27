@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import "../style/moviedetail.css";
 import { Badge } from "react-bootstrap";
 import Review from "../components/Review";
+
 const MovieDetail = () => {
   let { id } = useParams();
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -105,7 +106,8 @@ const MovieDetail = () => {
       </div>
       {
         page===1 ?
-        <Review/>
+        <Review reviewData={reviewData}/>
+        
         :
         null
       }
