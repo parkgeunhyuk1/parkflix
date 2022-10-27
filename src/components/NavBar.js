@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <Navbar bg="black" variant='dark' expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"><img width={100} src='https://ak.picdn.net/shutterstock/videos/1089898673/thumb/10.jpg?ip=x480'/></Navbar.Brand>
+        <Navbar.Brand href="#"><img width={100} src='https://timelinecovers.pro/facebook-cover/download/netflix-media-lights-facebook-cover.jpg'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

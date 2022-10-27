@@ -9,27 +9,30 @@ const getMovies = () => {
             `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
           );
           const topRatedApi = api.get(
-            `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+            `/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
           );
           const upComingApi = api.get(
-            `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+            `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
           );
           const genreApi= api.get(`/genre/movie/list?api_key=${API_KEY}&language=en-US`)
-      
-          let [popularMovies, topRatedMovies, upcomingMovies,genreList] = await Promise.all([
+          const getMovieDetail= api.get(`/movie/{movie_id}?api_key=${API_KEY}&language=en-US`)
+          
+          let [popularMovies, topRatedMovies, upcomingMovies,genreList,movieDetailList] = await Promise.all([
             popularMovieApi,
             topRatedApi,
             upComingApi,
             genreApi,
+            
           ]);
-          
+          console.log('제발',movieDetailList)
           dispatch({
             type: "GET_MOVIES_SUCCESS",
             payload: {
               popularMovies: popularMovies.data,
               topRatedMovies: topRatedMovies.data,
               upcomingMovies: upcomingMovies.data,
-              genreList: genreList.data.genres
+              genreList: genreList.data.genres,
+              
             },
           });
     }catch(error){

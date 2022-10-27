@@ -2,6 +2,8 @@
     width: 300px;
     background-position: center center;
     background-size: cover;
+    resize: both;
+    overflow: scroll;
 }
 .overlay{
     opacity: 0;

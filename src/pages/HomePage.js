@@ -8,7 +8,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 const HomePage = () => {
   const dispatch=useDispatch()
   const {popularMovies,topRatedMovies,upcomingMovies, loading}=useSelector(state=>state.movie)
-  console.log('home',popularMovies)
+  
 
   useEffect(()=>{
     dispatch(movieAction.getMovies())

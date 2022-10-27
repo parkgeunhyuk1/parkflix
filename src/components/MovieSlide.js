@@ -24,6 +24,7 @@ const responsive = {
 };
 
 const MovieSlide = ({ movies }) => {
+  console.log('얘는어케옴',movies)
   return (
         <div className="slide">
       <Carousel responsive={responsive}>
