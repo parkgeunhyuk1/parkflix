@@ -10,9 +10,9 @@ function Pagination({ total, limit, page, setPage }) {
         <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
           &lt;
         </Button>
-        
+       
         {
-         Array(numPages)
+         !!numPages&& Array(numPages)
           .fill()
           .map((_, i) => (
             <Button
@@ -62,7 +62,7 @@ const Button = styled.button`
   }
 
   &[aria-current] {
-    background: deeppink;
+    background: red;
     font-weight: bold;
     cursor: revert;
     transform: revert;

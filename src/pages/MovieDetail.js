@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import "../style/moviedetail.css";
 import { Badge } from "react-bootstrap";
 import Review from "../components/Review";
+import RelatedMovies from "../components/RelatedMovies";
 
 const MovieDetail = () => {
   let { id } = useParams();
@@ -97,10 +98,10 @@ const MovieDetail = () => {
     </div>
     <div className="review">
       <div className="buttonContainer">
-        <button onClick={()=>{
+        <button  onClick={()=>{
           setPage(1)
         }} className="reviewButton"><h3>REVIEWS({reviewData?.results.length})</h3></button>
-        <button onClick={()=>{
+        <button  onClick={()=>{
           setPage(2)
         }} className="relatedMovies"><h3>RELATED MOVIES</h3></button>
       </div>
@@ -109,7 +110,7 @@ const MovieDetail = () => {
         <Review reviewData={reviewData}/>
         
         :
-        null
+        <RelatedMovies/>
       }
     </div>
     </div>
