@@ -1,0 +1,35 @@
+.sortbox{
+    width: 300px;
+    
+    border: 2px solid white;
+    margin-top: 43%;
+}
+.sorthead{
+    width: 100%;
+    border-bottom: 2px solid white;
+    height: 5vh;
+    color: white;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+.popular{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+}
+.point{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+}
+.release{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    
+}

@@ -1,9 +1,9 @@
 import React from "react";
-import "../style/movieCard.css";
+import "../style/moviescard.css";
 import { Badge } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-const MovieCard = ({ item }) => {
+const MoviesCard = ({ item }) => {
   const navigate = useNavigate();
   const { genreList } = useSelector((state) => state.movie);
   
@@ -12,12 +12,12 @@ const MovieCard = ({ item }) => {
       onClick={() => {
         navigate(`/movies/${item?.id}`);
       }}
-      id="card1"
-      className="card"
+      id="card2"
+      className="card3"
       style={{
         backgroundImage:
           "url(" +
-          `https://www.themoviedb.org/t/p/w355_and_h200_multi_faces${item?.poster_path}` +
+          `https://www.themoviedb.org/t/p/w300_and_h450_multi_faces${item?.poster_path}` +
           ")",
       }}
     >
@@ -39,4 +39,4 @@ const MovieCard = ({ item }) => {
   );
 };
 
-export default MovieCard;
+export default MoviesCard;

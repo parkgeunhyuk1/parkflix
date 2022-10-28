@@ -1,0 +1,30 @@
+.movies{
+    background-color: black;
+    width: 100%;
+    
+    display: flex;
+    
+}
+.sorted{
+    width: 30%;
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+.sortchart{
+    display: flex;
+    flex-direction: column;
+}
+.movieCardComponent{
+    margin: 50px;
+    padding: 50px;
+    width: 50%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr ;
+}
+.pagebox{
+    display: flex;
+    justify-content: center;
+    margin-left: 90%;
+}
