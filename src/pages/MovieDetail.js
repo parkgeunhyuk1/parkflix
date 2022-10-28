@@ -7,6 +7,8 @@ import "../style/moviedetail.css";
 import { Badge } from "react-bootstrap";
 import Review from "../components/Review";
 import RelatedMovies from "../components/RelatedMovies";
+import TrailerModal from "../components/TrailerModal";
+
 
 const MovieDetail = () => {
   let { id } = useParams();
@@ -88,7 +90,7 @@ const MovieDetail = () => {
           <Badge className="budget" bg="danger">Time</Badge>{movieData?.runtime}min
           </div>
           </div>
-          
+          <TrailerModal movieData={movieData}/>
           
           
          

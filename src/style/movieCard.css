@@ -4,6 +4,7 @@
     background-size: cover;
     resize: both;
     overflow: scroll;
+    color: white;
 }
 .overlay{
     opacity: 0;
