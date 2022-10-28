@@ -24,15 +24,15 @@ const responsive = {
 };
 
 const MovieSlide = ({ movies }) => {
-  console.log('얘는어케옴',movies)
+  
   return (
-        <div className="slide">
+    <div className="slide">
       <Carousel responsive={responsive}>
-        {movies.results.map(item=><MovieCard item={item}/>)}
+        { movies?.results.map((item) => (
+          <MovieCard item={item} />
+        ))}
       </Carousel>
-      </div>
-      
-    
+    </div>
   );
 };
 

@@ -30,9 +30,9 @@ const MovieDetail = () => {
   useEffect(() => {
     getMoivesDetail();
     getReview()
-  }, []);
+  }, [id]);
   console.log('영화',movieData);
-  console.log('리뷰',reviewData)
+  console.log('리뷰',reviewData?.id)
   return (
     <div className="pageContainer">
     <div className="detailpage">
@@ -108,9 +108,8 @@ const MovieDetail = () => {
       {
         page===1 ?
         <Review reviewData={reviewData}/>
-        
         :
-        <RelatedMovies/>
+        <RelatedMovies reviewData={reviewData}/>
       }
     </div>
     </div>

@@ -104,3 +104,11 @@
     border-bottom: 1px solid grey;
     padding: 20px;
 }
+.relatedMovieComponent{
+    display: flex;
+}
+.slide{
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
