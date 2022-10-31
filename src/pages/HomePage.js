@@ -13,6 +13,7 @@ const HomePage = () => {
   useEffect(()=>{
     dispatch(movieAction.getMovies())
   },[])
+  console.log(popularMovies)
   if(loading){
     return <ClipLoader
     color='red'

@@ -3,11 +3,13 @@ let initialState = {
   topRatedMovies: {},
   upcomingMovies: {},
   loading:true,
-  genreList:[]
+  genreList:[],
+  
 };
 
 function movieReducer(state = initialState, action) {
   let { type, payload } = action;
+  
   switch (type){
     case "GET_MOVIES_REQUEST":
         return {...state,loading:true}
@@ -23,10 +25,12 @@ function movieReducer(state = initialState, action) {
         genreList: payload.genreList,
       };
       case "GET_MOVIES_FAILURE":
-        return {...state,loading: false}
+        return {...state,loading: false};
       default:
         return{...state};
   }
+ 
+
 }
 
 export default movieReducer;

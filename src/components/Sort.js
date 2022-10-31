@@ -1,8 +1,19 @@
 import React, { useState } from 'react'
+
 import '../style/sort.css'
-const Sort = ({data}) => {
+const Sort = ({sortpopularMovies, setSortPopularMovies}) => {
+  
     const [show,setShow]=useState(1)
-    console.log('이제됨?',data?.results)
+  const sortByPoint=()=>{
+    setSortPopularMovies([...sortpopularMovies]?.sort((a,b)=>b.vote_average-a.vote_average))
+  }
+  const sortByPopulartiry=()=>{
+    setSortPopularMovies([...sortpopularMovies]?.sort((a,b)=>b.popularity-a.popularity))
+  }
+  const sortByDate=()=>{
+    setSortPopularMovies([...sortpopularMovies]?.sort((a,b)=>new Date(b.release_date)-new Date(a.release_date)))
+  }
+    !!sortpopularMovies&& console.log('자',sortpopularMovies)
   return (
     <div className='sortbox'>
       <div onClick={()=>{
@@ -14,16 +25,20 @@ const Sort = ({data}) => {
         show===2?
         <>
         <div className='popular'>
-        <h4 onClick={()=>{
-            data?.results.map((item)=>item?.popularity)
-            
+        <h4 onClick={()=>{   
+          sortByPopulartiry()
+          console.log('ㅁㄴㅇ',sortpopularMovies)
         }}>인기도순</h4>
       </div>
       <div className='point'>
-        <h4>평점순</h4>
+        <h4 onClick={()=>{
+          sortByPoint()
+        }}>평점순</h4>
       </div>
       <div className='release'>
-        <h4>개봉일순</h4>
+        <h4 onClick={()=>{
+          sortByDate()
+        }}>개봉일순</h4>
       </div>
       </>:
       null
